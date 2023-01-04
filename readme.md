@@ -1,6 +1,8 @@
 <h1>無情的圈圈叉叉機械手</h1><br>
-  <h2><b>簡介：</b></h2>
+<h2><b>簡介：</b></h2>
   <h4>使用webcamera拍攝紙上的情況，經由raspberry pi辨識圈叉，並計算出要畫叉的位置，最後用機械手臂在紙上畫上叉叉</h4><br>
+<h2>動機</h2>
+  <h4>因為這部<a href="https://www.youtube.com/shorts/E5FjkQiIyA8">OOXX迷因影片</a>讓我們想做一個無情的圈圈叉叉機器人</h4>
 <h2><b>硬體設備：</b></h2>
   <h4>Raspberry pi 3、便宜實惠的機械手臂(要自己組裝!!!)、3顆sg90伺服馬達、PCA for raspberry pi 、webcamera、墊webcamera的盒子(長寬高)、一張特殊規格的A4紙、一隻水分和軟硬度適合的筆</h4><br>
 <h2><b>軟體套件：</b></h2>
