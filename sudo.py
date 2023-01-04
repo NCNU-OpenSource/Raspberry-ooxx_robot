@@ -138,13 +138,13 @@ def checkInclude(check_list, index, boxes) :
 
 
 #color_index += 1
-#circleBox(cv2.imread('5_5_temp_4.jpg'), color_index)
+#circleBox(cv2.imread('templates/5_5_temp_4.jpg'), color_index)
 #color_index += 1
-#circleBox(cv2.imread('5_5_temp_7.jpg'), color_index)
+#circleBox(cv2.imread('templates/5_5_temp_7.jpg'), color_index)
 #color_index += 1
-#circleBox(cv2.imread('5_5_temp_8.jpg'), color_index)
+#circleBox(cv2.imread('templates/5_5_temp_8.jpg'), color_index)
 color_index += 1
-circleBox(cv2.imread('5_5_temp_9.jpg'), color_index)
+circleBox(cv2.imread('templates/5_5_temp_9.jpg'), color_index)
 
 """###
 
