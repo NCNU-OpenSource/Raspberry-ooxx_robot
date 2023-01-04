@@ -13,23 +13,15 @@
   <br/>
   Adafruit Python PCA9685：
   <br/>
+  
   ```
   git clone https://github.com/adafruit/Adafruit_Python_PCA9685.git
   cd Adafruit_Python_PCA9685
   sudo python setup.py install
   ```
+  python3： `sudo apt install python3`
   <br/>
-  python3：
-  <br/>
-  ```
-  sudo apt install python3
-  ```
-  <br/>
-  fswebcam：
-  <br/>
-  ```
-  sudo apt-get install fswebcam
-  ```
+  fswebcam： `sudo apt-get install fswebcam`
 <h2><b>硬體安裝<b></h2>
   0. <a href = "https://hackmd.io/@ncnu-opensource/book/https%3A%2F%2Fhackmd.io%2F2j1JjIi_Q4KFgzkRgCZclw%3Fboth">raspberry pi環境安裝</a>
   <br/>
@@ -74,5 +66,7 @@ robot.py --控制馬達移動機械手畫叉叉
   <a href = "https://medium.com/linux-on-raspberry-pi4/raspberry-pi%E5%AE%89%E8%A3%9Dopencv-%E5%AE%89%E8%A3%9D%E7%AF%87-1e6e35051680">opencv</a>
   <br/>
   <a href = "https://docs.circuitpython.org/projects/pca9685/en/latest/api.html">adafruit 教學</a>
+  
+
   
   
