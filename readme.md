@@ -1,10 +1,10 @@
 <h1>無情的圈圈叉叉機械手</h1><br>
-<h2><b>簡介：</b></h2>
+<h1><b>簡介：</b></h1>
   <h4>使用webcamera拍攝紙上的情況(玩家的圈圈)，經由raspberry pi辨識圈圈，並計算出要畫叉的位置，最後用機械手臂在紙上畫上叉叉。</h4><br>
 <h2>動機</h2>
   <h4>因為這部<a href="https://www.youtube.com/shorts/E5FjkQiIyA8">OOXX迷因影片</a>讓我們想做一個無情的圈圈叉叉機器人。</h4>
 <h2><b>硬體設備：</b></h2>
-  <h4>Raspberry pi 3、<a href = "https://shopee.tw/product/4491023/2084598147?smtt=0.321393749-1672830414.4">便宜實惠的機械手臂(要自己組裝!!!)</a>、3顆sg90伺服馬達、<a href = "https://shopee.tw/product/139069730/6518867147">樹梅派專用伺服馬達驅動板</a> 、webcamera、墊webcamera的盒子(長寬高)、一張特殊規格的A4紙、一隻白板筆(頭不要太硬的筆都可以)</h4><br>
+  <h4>Raspberry pi 3、<a href = "https://shopee.tw/product/4491023/2084598147?smtt=0.321393749-1672830414.4">便宜實惠的機械手臂(要自己組裝!!!)</a>、3顆sg90伺服馬達、<a href = "https://shopee.tw/product/139069730/6518867147">樹梅派專用伺服馬達驅動板</a> 、webcamera、墊webcamera的盒子(長寬高)、一張特殊規格的A4紙、一隻白板筆(頭不要太硬的筆都可以)</h4>
 <h2><b>軟體套件：</b></h2>
   <h4>OpenCV、Adafruit Python PCA9685、python3、fswebcam</h4><br>
   <b>安裝教學：</b>
@@ -36,7 +36,9 @@ robot.py --控制馬達移動機械手畫叉叉
   在一張A4的空白紙上照著<a href = "https://github.com/tommygood/Raspberry-ooxx_robot/blob/master/specification.jpg">規格圖</a>的規格繪製場地(一定要畫準，因為我們對精準度非常要求!)<br>
   繪製場地後，將機器手基座對準紙張左上角的點點、墊webcamera的盒子放在右下角"box"點點的右方3cm處，再把webcamera固定在盒子上
 <h2><b>開始玩囉！</b></h2>
-執行程式碼: python3 execute.py
+  執行程式碼：python3 execute.py
+  <br/>
+  實際遊玩結果：<a href = "https://drive.google.com/file/d/1t0BdfGBpunlJSryFt57lQvPnwV_Ga7O_/view?usp=sharing">遊玩影片</a>
   <br/>
 <h2>工作分配</h2>
   <b>黃瑜楓</b>：圈叉演算法、手臂畫叉叉函式、材料購買、創意發想。
@@ -56,6 +58,7 @@ robot.py --控制馬達移動機械手畫叉叉
   <a href = "https://blog.gtwang.org/iot/raspberry-pi-usb-webcam/">fswebcam</a>
   <br/>
   <a href = "https://medium.com/linux-on-raspberry-pi4/raspberry-pi%E5%AE%89%E8%A3%9Dopencv-%E5%AE%89%E8%A3%9D%E7%AF%87-1e6e35051680">opencv</a>
+  <br/>
   <a href = "https://docs.circuitpython.org/projects/pca9685/en/latest/api.html">adafruit 教學</a>
   
   
