@@ -11,11 +11,25 @@
   <br/>
   <a href = "https://medium.com/ching-i/%E6%A8%B9%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%9D-opencv-4-4-0-606900caf370">OpenCV</a>
   <br/>
-  <a href = "https://youtu.be/9jcEwn7GzNs">Adafruit Python PCA9685</a>
+  Adafruit Python PCA9685：
   <br/>
-  python3：sudo apt install python3 (3.9.2)
+  ```
+  git clone https://github.com/adafruit/Adafruit_Python_PCA9685.git
+  cd Adafruit_Python_PCA9685
+  sudo python setup.py install
+  ```
   <br/>
-  fswebcam：sudo apt-get install fswebcam
+  python3：
+  <br/>
+  ```
+  sudo apt install python3
+  ```
+  <br/>
+  fswebcam：
+  <br/>
+  ```
+  sudo apt-get install fswebcam
+  ```
 <h2><b>硬體安裝<b></h2>
   0. <a href = "https://hackmd.io/@ncnu-opensource/book/https%3A%2F%2Fhackmd.io%2F2j1JjIi_Q4KFgzkRgCZclw%3Fboth">raspberry pi環境安裝</a>
   <br/>
