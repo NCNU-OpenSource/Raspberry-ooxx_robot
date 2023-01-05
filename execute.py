@@ -11,26 +11,22 @@ def main() :
     each_resolution = [320,240] # 預設解析度
     size = 3
     data = [[0 for i in range(size)]for j in range(size)] # game
-    while True :
+    while True : # 遊戲開始
         resolution = str(each_resolution[0] + (80 * (current-1))) + "x" + str(each_resolution[1] + (80 * (current-1)))
-        resolution = "1920x1080"
+        resolution = "1920x1080" # 照片畫質
         print("開始拍攝當前照片，解析度為%s。" %resolution)
         pic_path = mkTxtName() + ".jpg" # make txt name with now time
+        # 拍照
         call(["fswebcam", "-d", "/dev/video0", "-r", resolution, "--no-banner", "./upload/cam/%s" % pic_path])
         print("開始偵測照片 %s" %pic_path)
-        #call(["python3", "opencv_feature.py", "--image", "./upload/cam/" + pic_path])
-        #call(["python3", "opencv_feature.py", "--image", "./game2.jpg"])
-        #call(["python3", "sudo.py", "--image", "./upload/cam/" + pic_path])
-        #call(["python3", "sudo.py", "--image", "./sta_circle.jpg"])
+        # 跑影片辨識圈圈
         result = run(["python3", "sudo.py", "--image", "./upload/cam/" + pic_path], stdout=PIPE, stderr=PIPE, universal_newlines=True)
         print("結束偵測當前照片")
-        #print(result.stdout)
-        result_list = result.stdout.split('$')[:-1]
-        #print(result_list)
-        data = putResultInData(result_list, data)
-        game_result, botplay = playGame(deepcopy(data))
-        data = putBotData(data, botplay)
-        print(data)
+        result_list = result.stdout.split('$')[:-1] # 偵測結果
+        data = putResultInData(result_list, data) # 把玩家的下的步放進 data
+        game_result, botplay = playGame(deepcopy(data)) # 跑圈圈叉叉演算法
+        data = putBotData(data, botplay) # 把電腦的下的步放進 data
+        # 判斷遊戲結果
         if game_result == 3 :
             print("平手，遊戲結束")
             break
@@ -42,8 +38,6 @@ def main() :
             call(["python3", "../Adafruit_Python_PCA9685/examples/robot.py", "-n", str(87)])
             break
         input('是否準備好了？')
-        #print("暫停 %d 秒後，繼續偵測" %interrupt)
-        #time.sleep(interrupt)
 
 def putBotData(data, botplay) :
     print("電腦要下的布 " + str(botplay))
@@ -70,7 +64,7 @@ def putBotData(data, botplay) :
     elif r==2 and c==2:
         function_num=0
     print("執行第 " + str(function_num) + "個cha")
-    # 執行畫線
+    # 在哪格畫叉叉
     call(["python3", "../Adafruit_Python_PCA9685/examples/robot.py", "-n", str(function_num)])
     return data
 
@@ -94,6 +88,7 @@ def mkTxtName() :
             index += 1
     return content
 
+# 判斷遊戲是否結束
 def endGame(data):
     for i in range(3): # 判斷橫線
         if data[i][0] != 0 and data[i][0] == data[i][1] == data[i][2]:
@@ -117,21 +112,21 @@ def endGame(data):
             return 1
         else: # 對手
             return 2 
-    for i in range(3):
+    for i in range(3): # 有0代表還沒結束
         for j in range(3):
             if data[i][j] == 0:
                 return 0 # 還沒結束
     return 3 # 平手
 
 def findSol(size,data):
-    # 判斷遊戲結果
+    # 先判斷遊戲結果
     result = endGame(data)
     if result != 0:
         return result,"",data
     emptyPos = []
     myPos = []
     playerPos = []
-    for i in range(size): # 先判斷空的位置
+    for i in range(size): # 先判斷空的和畫過的位置
         for j in range(size):
             if data[i][j] == 0: # 空的
                 emptyPos.append([i,j])
@@ -140,7 +135,7 @@ def findSol(size,data):
             else: # 對手的
                 playerPos.append([i,j])
     myChoose = []
-    # 下哪個可以讓自己贏或讓對手贏
+    # 下哪個可以讓自己贏或不下哪裡對手會贏
     winPos = []
     lossPos = []
     for i in range(len(emptyPos)):
@@ -155,7 +150,7 @@ def findSol(size,data):
     if len(winPos) > 0: # 有可以贏的
         myChoose = [winPos[0][0],winPos[0][1]]
         data[winPos[0][0]][winPos[0][1]] = 1
-    elif len(lossPos) > 0: # 不下這裡會讓自己輸
+    elif len(lossPos) > 0: # 不下這裡對手會贏
         myChoose = [lossPos[0][0],lossPos[0][1]]
         data[lossPos[0][0]][lossPos[0][1]] = 1
     elif len(myPos) != 0: # 不是第一次下
@@ -194,13 +189,15 @@ def findSol(size,data):
                             found = True
                             break
         if found == False:
-            # 剩下隨便選
+            # 剩下就選第一個空格
             myChoose = [emptyPos[0][0],emptyPos[0][1]]
             data[emptyPos[0][0]][emptyPos[0][1]] = 1
     else: # 第一次下
+        # 中間能下就下中間
         if data[1][1] == 0:
             data[1][1] = 1
             myChoose = [1,1]
+        # 不行就下第一個空格
         else:
             myChoose = [emptyPos[0][0],emptyPos[0][1]]
             data[emptyPos[0][0]][emptyPos[0][1]] = 1
