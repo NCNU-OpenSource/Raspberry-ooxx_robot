@@ -434,20 +434,6 @@ def dance() :
 
     
 def main() :
-    """cha_0()
-    pwm.set_pwm(2, 0, 350)
-    time.sleep(3)
-    cha_1()
-    pwm.set_pwm(2, 0, 350)
-    time.sleep(3)
-    cha_2()"""
-    #cha_3()
-    #cha_4()
-    #cha_5()
-    #cha_6()
-    #cha_7()
-    #cha_8()
-    # end
     pwm.set_pwm(2, 0, 0)
     pwm.set_pwm(1, 0, 0)
     pwm.set_pwm(0, 0, 0)
@@ -459,18 +445,11 @@ def main() :
     else :
         # back to start point
         pwm.set_pwm(2, 0, 550)
-        #pwm.set_pwm(0, 0, 150)
         time.sleep(0.5)
         pwm.set_pwm(1, 0, 350)
         time.sleep(0.5)
         pwm.set_pwm(1, 0, 300)
         time.sleep(1)
-    #pwm.set_pwm(2, 0, 150)
-    #time.sleep(2)
-    #test()
-    #test1()
-    #test2()
-    #test3()
         eval("cha_"+n+"()")
         time.sleep(1)
         # back to end
