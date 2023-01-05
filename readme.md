@@ -42,7 +42,9 @@ robot.py --控制馬達移動機械手畫叉叉
   在一張A4的空白紙上照著<a target="_blank" href = "https://github.com/tommygood/Raspberry-ooxx_robot/blob/master/specification.jpg">規格圖</a>的規格繪製場地(一定要畫準，因為我們對精準度非常要求!)<br>
   繪製場地後，將機器手基座對準紙張左上角的點點、墊webcamera的盒子放在右下角"box"點點的右方3cm處，再把webcamera固定在盒子(<a href = "https://github.com/tommygood/Raspberry-ooxx_robot/blob/master/box_up.jpg">長、寬</a>和<a href = "https://github.com/tommygood/Raspberry-ooxx_robot/blob/master/box_side.jpg">高</a>)上
 <h2><b>開始玩囉！</b></h2>
-  執行程式碼：python3 execute.py
+  執行程式碼：
+  
+  `python3 execute.py`
   <br/>
   實際遊玩結果：<a target="_blank" href = "https://drive.google.com/file/d/1t0BdfGBpunlJSryFt57lQvPnwV_Ga7O_/view?usp=sharing">遊玩影片</a>
   <br/>
@@ -72,6 +74,7 @@ robot.py --控制馬達移動機械手畫叉叉
   有一天早上我們要繼續做的時候，原本丈量好的機械手臂要畫叉叉的座標都跑掉了，且程式碼完全沒有動。
   <br/>
   然後當我們都準備好要全部重新量座標的時候，不小心讓馬達敲一下地板，就回到之前的狀態了，真是神奇。
+  <br/>
   <b>3. 程式碼整合</b>
   影像辨識和遊戲程式在整合時，因為雙方的程式都寫得蠻醜的(尤其是某人寫的函數和變數名稱!!!)，所以整合和debug時弄得非常辛苦QQ，以後合作的話要寫好看點嘿<br/>
 <h2>工作分配</h2>
