@@ -7,7 +7,7 @@ import argparse
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", required = True, help = "Path to the image") # get image path from execute.py
 args = vars(ap.parse_args())
-# load the image, clone it for output, and then convert it to grayscale
+# 讀剛剛拍的照片
 img = cv2.imread(args["image"])
 # each range of (x,y) in the 9(3x3) frame
 x_row = [[600,850], [851,1080], [1081,1350]] 
@@ -63,6 +63,7 @@ def circleBox(temp, color_index) :
                     (255, color_index * 63, 0), 1)
         #print([x1, y1, x2, y2])
         #print(img)
+        # 檢查重疊，用多個 templates 才要用
         """if checkInclude(boxes[index], index, total_box) :
             #cv2.rectangle(img, (x1-50, y1-50), (x2-50, y2-50),
             #            (255, color_index * 63, 0), 1)
@@ -79,8 +80,8 @@ def circleBox(temp, color_index) :
 
 def checkInclude(check_list, index, boxes) : # 檢查是否有重疊物件
     n_index = 0
-    #if len(boxes) == 0 :
-    #    return False
+    if len(boxes) == 0 :
+        return False
     for (x1, y1, x2, y2) in boxes:
         if index > n_index : # 比要檢查的還要前面，所以要檢查
             if (x2 >= check_list[0] and x1 <= check_list[0]) and (y2 >= check_list[1] and y1 <= check_list[1]) : # 檢查 x0
@@ -120,7 +121,6 @@ for i in total_box :
         y_index = 0
         for start_y, end_y in y_row :
             if (start_x < center_x and end_x > center_x) and (start_y < center_y and end_y > center_y) :
-                #print("此圓形在 (" + str(x_index) + ", " + str(y_index) + ")")
                 print(str(x_index) + "," + str(y_index) + "$", end ='')
             y_index += 1
         x_index += 1
@@ -138,13 +138,3 @@ for i in total_box :
         new_total_box.append(i)
     index_n += 1"""
 cv2.imwrite(args['image'], img)
-
-# Show the template and the final output
-#cv2.imshow("Template", temp)
-#cv2.namedWindow("After NMS",0); #创建窗口
-#cv2.imshow("After NMS", img)
-#cv2.waitKey(0)
-
-# destroy all the windows
-# manually to be on the safe side
-cv2.destroyAllWindows()
