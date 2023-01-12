@@ -10,7 +10,7 @@
   <li><h4>3顆sg90伺服馬達</h4></li>
   <li><h4><a href = "https://shopee.tw/product/139069730/6518867147" target="_blank">樹梅派專用伺服馬達驅動板</a> </h4></li>
   <li><h4>webcamera </h4></li>
-  <li><h4>用來墊webcamera的紙盒(長 : 9.5cm，寬：7cm，高：14.5cm) </h4></li>
+  <li><h4>用來墊webcamera的紙盒(長 : 9.5cm，<a href = "https://github.com/tommygood/Raspberry-ooxx_robot/blob/master/box_up.jpg">寬</a>：7cm，<a href = "https://github.com/tommygood/Raspberry-ooxx_robot/blob/master/box_side.jpg">高</a>：14.5cm) </h4></li>
   <li><h4>一張特殊規格的A4紙 </h4></li>
   <li><h4>一隻黑色奇異筆和一隻紅色白板筆 (頭不要太硬的筆都可以) </h4></li>
   <li><h4>很多橡皮筋 </h4></li>
