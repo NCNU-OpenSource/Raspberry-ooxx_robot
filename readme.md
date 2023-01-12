@@ -77,7 +77,7 @@
   
   `python3 execute.py`
   <br/>
-  實際遊玩結果：<a target="_blank" href = "https://drive.google.com/file/d/1t0BdfGBpunlJSryFt57lQvPnwV_Ga7O_/view?usp=sharing">遊玩影片</a>
+  實際遊玩結果：<a target="_blank" href = "https://www.youtube.com/watch?v=LlVConbf5Gc">遊玩影片</a>
   <br/>
   
 <h2>心得反饋&遇到的困難</h2>
